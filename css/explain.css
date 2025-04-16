@@ -3,7 +3,7 @@ body {
     background: linear-gradient(to bottom, #ffffff, #ffffff);
     font-family: 'Noto Sans KR', sans-serif;
     opacity: 0;
-    animation: fadeInBody 1s ease-out 2.3s forwards;
+    animation: fadeInBody 1s ease-out 1s forwards;
   }
   
   /* .intro {
@@ -181,4 +181,3 @@ body {
     z-index: 100;
     display: none; /* 기본은 안 보이게 */
   }
-  

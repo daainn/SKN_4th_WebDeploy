@@ -2,25 +2,25 @@
 
 body {
     margin: 0;
-    background: linear-gradient(to bottom, #fdfaf5, #f0ece3);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     font-family: 'Noto Sans KR', sans-serif;
     opacity: 0;
-    animation: fadeInBody 1s ease-out 2.3s forwards;
+    animation: fadeInBody 1s ease-out 1s forwards;
   }
   
   .intro {
     position: fixed;
     z-index: 9999;
-    background: #f5f0e8;
+    background: #ffffff;
     top: 0; left: 0; right: 0; bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 1s ease-out 3s forwards;
+    animation: fadeOut 1s ease-out 2s forwards;
   }
   
   .intro-logo {
-    width: 200px;
+    width: 500px;
   }
   
   @keyframes fadeOut {
@@ -30,78 +30,172 @@ body {
   @keyframes fadeInBody {
     to { opacity: 1; }
   }
-  
-  .top-bar {
+
+   .top-bar {
     display: flex;
-    justify-content: flex-end;
-    padding: 1rem 2rem 0;
-    gap: 0.5rem;
+    justify-content: space-between;  /* ← 로고 왼쪽, 버튼 오른쪽 */
+    align-items: center;              /* ← 수직 가운데 정렬 */
+    padding: 1.5rem 2rem 0;
   }
   
-  .top-bar button {
+  /* .language-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .language-buttons button {
     border: none;
     padding: 0.4rem 0.9rem;
     border-radius: 1.5rem;
-    background: #fff;
+    background: #0000000A;
     color: #000;
     font-size: 0.9rem;
     cursor: pointer;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15); 
+    transition: all 0.2s ease-in-out; 
+  } */
+
+  .language-buttons {
+    display: flex;
+    gap: 0.7rem;
   }
   
-  .top-bar button.active {
+  .language-buttons button {
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 1.5rem;
+    background: #0000000A;
+    color: #000;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    
+    min-width: 90px;        /* 👈 최소 너비 동일하게 맞춤 */
+    text-align: center;     /* 👈 텍스트 가운데 정렬 */
+    flex-shrink: 0;         /* 👈 줄어들지 않게 설정 */
+  }
+  
+
+  .language-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .language-buttons button.active {
     background: #333;
     color: #fff;
   }
   
-  .content {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem 2rem 0;
-  }
-  
+
+   
   .logo {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
   .title {
     text-align: center;
     margin-bottom: 2rem;
   }
-  
+/*   
   .title h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-family: 'Saira Stencil One', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+  } */      
+  .title h1 {
+    font-family: 'Noto Sans KR', sans-serif;  /* 기본 얇은 글씨 */
+    font-weight: 600;                         /* 얇게 */
+    font-size: 3rem;
+    color: #535050;
+  }
+  
+  .title h1 strong {
+    font-family: 'Saira Stencil One', sans-serif;  /* MUSE 전용 폰트 */
+    font-weight: 800;  
+    color: #535050;                            /* 진하게 */
   }
   
   .title p {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: #555;
   }
+
   
   .ticket-input {
     text-align: center;
-    margin: 1rem 0 1rem;
+    margin: 1.5rem 0;
+  }
+
+ 
+  
+  
+  .ticket-form {
+    display: inline-block;
+    text-align: left;
   }
   
-  .ticket-input input {
-    width: 500px;
+  .ticket-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .ticket-row input {
+    width: 700px;
     max-width: 100%;
     padding: 0.75rem 1.25rem;
     border: 1px solid #ccc;
+    background-color: #f9f9f9;
     border-radius: 2rem;
-    text-align: left;
-    color: #aaa;
     font-size: 0.95rem;
+    color: #333;
+  }
+
+  .ticket-row input.error {
+    border: 1px solid red;
+  }
+  
+
+   .submit-btn {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .submit-btn span {
+  transform: translateY(-2.5px); /* ← 살짝 위로 올림 */
+  display: inline-block;
+  }
+
+  .submit-btn:hover {
+    background-color: #222; /* 살짝 밝은 블랙 */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   }
   
   .ticket-error {
     color: red;
-    text-align: center;
     font-size: 0.9rem;
     margin-top: 0.5rem;
-    display: block;
+    margin-left: 1rem;
+    display: none;  /* 기본 감춤 */
+    text-align: left;
   }
   
+
+
   .layout-row {
 
     flex: 0 0 100%;
