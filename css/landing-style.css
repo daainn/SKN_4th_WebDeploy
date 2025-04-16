@@ -1,0 +1,172 @@
+/* style.css */
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #fdfaf5, #f0ece3);
+    font-family: 'Noto Sans KR', sans-serif;
+    opacity: 0;
+    animation: fadeInBody 1s ease-out 2.3s forwards;
+  }
+  
+  .intro {
+    position: fixed;
+    z-index: 9999;
+    background: #f5f0e8;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 1s ease-out 3s forwards;
+  }
+  
+  .intro-logo {
+    width: 200px;
+  }
+  
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+  
+  @keyframes fadeInBody {
+    to { opacity: 1; }
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem 0;
+    gap: 0.5rem;
+  }
+  
+  .top-bar button {
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 1.5rem;
+    background: #fff;
+    color: #000;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .top-bar button.active {
+    background: #333;
+    color: #fff;
+  }
+  
+  .content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 2rem 0;
+  }
+  
+  .logo {
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .title h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .title p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .ticket-input {
+    text-align: center;
+    margin: 1rem 0 1rem;
+  }
+  
+  .ticket-input input {
+    width: 500px;
+    max-width: 100%;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    text-align: left;
+    color: #aaa;
+    font-size: 0.95rem;
+  }
+  
+  .ticket-error {
+    color: red;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+  
+  .layout-row {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    box-sizing: border-box;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  .layout-row:hover,
+  .layout-row:focus-within {
+      opacity: 1;
+      transform: scale(1);
+  }
+  .how-section {
+    flex: 1 1 50%;
+    padding-right:1rem;
+  }
+  
+  .how-section h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  .how-section p {
+    white-space: pre-line;
+    color: #444;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .image-preview {
+    flex: 1 1 50%;
+    text-align: center;
+  }
+  
+  .image-preview img {
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 3rem;
+  }
+  
+  .horizontal-scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    scroll-behavior: smooth;
+  }
+  .horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
