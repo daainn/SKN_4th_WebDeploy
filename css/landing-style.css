@@ -103,7 +103,7 @@ body {
   }
   
   .layout-row {
-<<<<<<< HEAD
+
     flex: 0 0 100%;
     display: flex;
     justify-content: space-between;
@@ -126,7 +126,7 @@ body {
   .how-section {
     flex: 1 1 50%;
     padding-right:1rem;
-=======
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -137,7 +137,7 @@ body {
   
   .how-section {
     flex: 1 1 45%;
->>>>>>> a91013800598ed6fab5a549e7a288a1bcfca3109
+
   }
   
   .how-section h2 {
@@ -170,8 +170,7 @@ body {
     color: #888;
     margin-top: 3rem;
   }
-  
-<<<<<<< HEAD
+
   .horizontal-scroll-wrapper {
     display: flex;
     overflow-x: auto;
@@ -183,7 +182,5 @@ body {
   .horizontal-scroll-wrapper::-webkit-scrollbar {
     display: none;
   }
-=======
 
->>>>>>> a91013800598ed6fab5a549e7a288a1bcfca3109
   

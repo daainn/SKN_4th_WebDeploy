@@ -46,7 +46,7 @@ function setLang(button, lang) {
   
     window.location.href = "main-page.html";
   }
-<<<<<<< HEAD
+
   const wrapper = document.querySelector('.horizontal-scroll-wrapper');
       
       // 수직 휠을 좌우 스크롤로 바꾸기
@@ -60,6 +60,5 @@ function setLang(button, lang) {
           });
         }
       }, { passive: false });
-=======
->>>>>>> a91013800598ed6fab5a549e7a288a1bcfca3109
+
   
