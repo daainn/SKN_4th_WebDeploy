@@ -1,21 +1,25 @@
+
 const translations = {
-    ko: {
-      title: "MUSE",
-      subtitle: "국립중앙박물관 챗봇",
-      questionPlaceholder: "질문을 입력하세요"
-    },
-    en: {
-      title: "MUSE",
-      subtitle: "National Museum Chatbot",
-      questionPlaceholder: "Ask your question"
-    },
-    ja: {
-      title: "MUSE",
-      subtitle: "国立中央博物館 チャットボット",
-      questionPlaceholder: "質問を入力してください"
-    }
-  };
-  
+  ko: {
+    title: "MUSE",
+    subtitle: "국립중앙박물관 챗봇",
+    questionPlaceholder: "질문을 입력하세요",
+    askButton: "질문하기"
+  },
+  en: {
+    title: "MUSE",
+    subtitle: "National Museum Chatbot",
+    questionPlaceholder: "Ask your question",
+    askButton: "Ask"
+  },
+  ja: {
+    title: "MUSE",
+    subtitle: "国立中央博物館 チャットボット",
+    questionPlaceholder: "質問を入力してください",
+    askButton: "質問する"
+  }
+};
+
   function setLang(button, lang) {
     document.querySelectorAll(".language-buttons button").forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
@@ -25,6 +29,8 @@ const translations = {
       document.querySelector("[data-i18n='title']").innerHTML = t.title;
       document.querySelector("[data-i18n='subtitle']").innerHTML = t.subtitle;
       document.getElementById("userQuestion").placeholder = t.questionPlaceholder;
+      document.getElementById("askButton").textContent = t.askButton;
+
     }
   }
   
