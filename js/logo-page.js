@@ -1,13 +1,13 @@
+
 window.addEventListener("DOMContentLoaded", () => {
-    const logo = document.querySelector(".logo");
-  
-    setTimeout(() => {
-      logo.classList.add("fade-out");
-  
-      // fade-out이 완료된 후 페이지 이동 (1초 후)
-      setTimeout(() => {
-        window.location.href = "landing-page.html";
-      }, 1000);
-    }, 3000);
+  const logo = document.querySelector(".logo");
+
+  setTimeout(() => {
+    logo.classList.add("fade-out");
+  }, 1000); // 보여주는 시간
+
+  logo.addEventListener("transitionend", () => {
+    // 애니메이션이 끝났을 때
+    window.location.href = "landing-page.html";
   });
-  
+});
