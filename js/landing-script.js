@@ -47,28 +47,13 @@ function setLang(button, lang) {
     const errorDiv = document.getElementById("ticketError");
     const ticket = input.value.trim();
   
-    if (ticket === "#000907") {
-      // 유효한 티켓 → 페이지 이동
-      errorDiv.style.display = "none";
-      input.classList.remove("error");
-      window.location.href = "explain.html";
-    } else {
-      // 유효하지 않음 → 에러 메시지 + 테두리 빨강
-      errorDiv.style.display = "block";
-      input.classList.add("error");
+    if (ticket === "" || !ticket.startsWith("#") || ticket.length < 6) {
+      document.getElementById("ticketError").style.display = "block";
+      return;
     }
-  }
-
-  document.getElementById("ticketNum").addEventListener("input", () => {
-    const input = document.getElementById("ticketNum");
-    const errorDiv = document.getElementById("ticketError");
   
-    if (input.classList.contains("error")) {
-      input.classList.remove("error");
-      errorDiv.style.display = "none";
-    }
-  });
-
+    window.location.href = "main-page.html";
+  }
 
   const wrapper = document.querySelector('.horizontal-scroll-wrapper');
       

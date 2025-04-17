@@ -28,11 +28,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem 0;
+    padding: 24px 32px 0px;
   }
   
   .museum-logo img {
-    height: 40px;
+    height: 90;
   }
   
   .top-bar {
@@ -42,12 +42,14 @@ body {
   
   .top-bar button {
     border: none;
-    padding: 0.4rem 0.9rem;
+    padding: 6.4px, 14.4px;
     border-radius: 1.5rem;
     background: #0000000a;
     color: #000;
     font-size: 0.9rem;
     cursor: pointer;
+    width: 90px;
+    height: 34.4px;
   }
   
   .top-bar button.active {
