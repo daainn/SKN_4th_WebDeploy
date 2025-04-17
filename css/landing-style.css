@@ -278,3 +278,81 @@ body {
   }
 
   
+  
+
+  .container {
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 110px;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+    /* box-sizing: border-box; */
+  }
+  
+ 
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding: 10px 0;
+    gap: 10px;
+    animation-play-state: running;
+    transition: animation-play-state 0.3s ease-in-out;
+    will-change: transform;
+  }
+  
+  
+  .row:hover {
+    animation-play-state: paused; /* 마우스 호버 시 애니메이션 일시정지 */
+  }
+
+ 
+  .box {
+    flex: 0 0 auto;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    /* margin-right: 1px; */
+    gap: 6px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 0.85em;
+    height: 55px;
+    width: 300px; 
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  
+  
+
+  @keyframes moveRightContinuous {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0%); }
+  }
+
+  @keyframes moveLeftContinuous {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+  }
+
+  .row-1 {
+    animation: moveRightContinuous 30s linear infinite; /* 속도 고정 */
+  }
+
+  .row-2 {
+    animation: moveLeftContinuous 30s linear infinite; /* 속도 고정 */
+  }
+
+  .row-3 {
+    animation: moveRightContinuous 30s linear infinite; /* 속도 고정 */
+  }
+  
