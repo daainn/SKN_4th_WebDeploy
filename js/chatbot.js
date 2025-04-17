@@ -52,7 +52,7 @@ const translations = {
     botDiv.innerHTML = `
       고려청자는 비색 유약과 상감 기법으로 유명합니다.
       <br>
-      <img src="ccc.jpeg" alt="고려청자" class="response-image">
+      <img src="image/ccc.jpeg" alt="고려청자" class="response-image">
       <audio controls class="response-audio">
         <source src="sample.mp3" type="audio/mpeg">
         오디오 지원 안됨

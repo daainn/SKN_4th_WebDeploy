@@ -5,7 +5,7 @@ body {
     background: linear-gradient(to bottom, #ffffff, #ffffff);
     font-family: 'Noto Sans KR', sans-serif;
     opacity: 0;
-    animation: fadeInBody 1s ease-out 1s forwards;
+    animation: fadeInBody 0.5s ease-out 0.3s forwards;
   }
   
   .intro {
@@ -37,22 +37,7 @@ body {
     align-items: center;              /* ← 수직 가운데 정렬 */
     padding: 1.5rem 2rem 0;
   }
-  
-  /* .language-buttons {
-    display: flex;
-    gap: 0.5rem;
-  }
-  .language-buttons button {
-    border: none;
-    padding: 0.4rem 0.9rem;
-    border-radius: 1.5rem;
-    background: #0000000A;
-    color: #000;
-    font-size: 0.9rem;
-    cursor: pointer;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15); 
-    transition: all 0.2s ease-in-out; 
-  } */
+
 
   .language-buttons {
     display: flex;
@@ -96,12 +81,7 @@ body {
     text-align: center;
     margin-bottom: 2rem;
   }
-/*   
-  .title h1 {
-    font-family: 'Saira Stencil One', sans-serif;
-    font-size: 3rem;
-    font-weight: 800;
-  } */      
+
   .title h1 {
     font-family: 'Noto Sans KR', sans-serif;  /* 기본 얇은 글씨 */
     font-weight: 600;                         /* 얇게 */

@@ -12,7 +12,7 @@
     width: 500px;
     height: auto;
     opacity: 1;
-    transition: opacity 1s ease-out;
+    transition: opacity 0.5s ease-out;
   }
   
   .fade-out {

@@ -6,16 +6,6 @@ body {
     animation: fadeInBody 1s ease-out 1s forwards;
   }
   
-  /* .intro {
-    position: fixed;
-    z-index: 9999;
-    background: #f5f0e8;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeOut 1s ease-out 3s forwards;
-  } */
   
   .intro-logo {
     width: 200px;
