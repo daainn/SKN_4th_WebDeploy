@@ -1,5 +1,5 @@
 function gotoDocent() {
-    window.location.href = "main-page.html";
+    window.location.href = "chatbot-page.html";
   }
   
   function setLang(button, lang) {

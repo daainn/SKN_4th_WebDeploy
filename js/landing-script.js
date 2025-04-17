@@ -52,7 +52,7 @@ function setLang(button, lang) {
       return;
     }
   
-    window.location.href = "main-page.html";
+    window.location.href = "explain-page.html";
   }
 
   const wrapper = document.querySelector('.horizontal-scroll-wrapper');
