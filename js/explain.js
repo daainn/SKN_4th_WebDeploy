@@ -147,6 +147,3 @@ function updateIndicator() {
       });
     });
   });
-  
-  
-  

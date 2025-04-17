@@ -63,4 +63,3 @@ const translations = {
     input.value = '';
     chatBox.scrollTop = chatBox.scrollHeight;
   }
-  
