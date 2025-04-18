@@ -6,11 +6,14 @@ function gotoDocent() {
     const translations = {
       ko: {
         slide1Title: "AI 도슨트 MUSE란?",
-        slide1Text: `AI 도슨트 MUSE는 관람객과 대화하며 유물을 설명해주는 스마트한 안내 서비스입니다.
-  질문을 하면, 유물에 대한 정보, 이미지, 그리고 음성 해설까지 제공되며,
-  언제든지 자유롭게 질문하고 답변받을 수 있어요.
+        slide1Text: `
+                    AI 도슨트 MUSE는 관람객과 대화하며 유물을 설명해주는 스마트한 안내 서비스입니다.
+                    
+                    질문을 하면 유물에 대한 정보, 이미지, 그리고 음성 해설까지 제공해드립니니다.
+                    
+                    간편하고 흥미롭게 전시를 즐겨보세요!
   
-  MUSE는 한국어, 영어, 일본어를 지원하여 외국인 관람객도 쉽게 사용할 수 있습니다.`,
+                    MUSE는 한국어, 영어, 일본어를 지원하여 외국인 관람객도 쉽게 사용할 수 있습니다.`,
         slide2Title: "어떻게 이용하나요?",
         slide2Text: `1. 페이지 상단에서 원하는 언어(한국어/English/日本語)를 선택하세요.
   2. 우측 하단의 '입장하기' 버튼을 클릭하면 도슨트 대화가 시작됩니다.
@@ -28,11 +31,14 @@ function gotoDocent() {
       },
       en: {
         slide1Title: "What is MUSE?",
-        slide1Text: `MUSE is a smart AI docent that communicates with visitors and explains artifacts.
-  It provides information, images, and voice guidance when you ask questions.
-  You can ask freely at any time.
-  
-  MUSE supports Korean, English, and Japanese for global visitors.`,
+        slide1Text: `
+                    MUSE is a smart AI docent that communicates with visitors and explains artifacts.
+
+                    If you ask questions, we will provide information, images, and even voice commentary about the artifacts.
+
+                    Enjoy the exhibition with ease and interest!
+                        
+                    MUSE supports Korean, English, and Japanese for global visitors.`,
         slide2Title: "How to use it?",
         slide2Text: `1. Choose your preferred language from the top.
   2. Click the "Enter" button to start the docent service.
@@ -50,11 +56,14 @@ function gotoDocent() {
       },
       ja: {
         slide1Title: "MUSEとは？",
-        slide1Text: `MUSEは来館者と会話しながら遺物を説明するスマートなAIガイドです。
-  質問すると、情報・画像・音声ガイドが提供されます。
-  いつでも自由に質問できます。
-  
-  MUSEは韓国語・英語・日本語をサポートしています。`,
+        slide1Text: `
+                    MUSEは来館者と会話しながら遺物を説明するスマートなAIガイドです。
+
+                    質問をすれば遺物に対する情報、イメージ、そして音声解説まで提供します。
+                      
+                    手軽で興味深く展示を楽しみましょう！
+                      
+                    MUSEは韓国語・英語・日本語をサポートしています。`,
         slide2Title: "使い方",
         slide2Text: `1. 上部で言語（한국어/English/日本語）を選びます。
   2. 「入場する」ボタンをクリックして開始します。
