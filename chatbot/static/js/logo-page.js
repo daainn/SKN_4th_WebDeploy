@@ -8,6 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   logo.addEventListener("transitionend", () => {
     // 애니메이션이 끝났을 때
-    window.location.href = "landing-page.html";
+    window.location.href = "landing";
   });
 });
