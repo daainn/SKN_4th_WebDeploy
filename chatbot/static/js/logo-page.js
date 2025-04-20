@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(() => {
     logo.classList.add("fade-out");
-  }, 800); // 보여주는 시간
+  }, 1000); // 보여주는 시간
 
   logo.addEventListener("transitionend", () => {
     // 애니메이션이 끝났을 때

@@ -5,20 +5,19 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>국립중앙박물관 AI 도슨트</title>
+  <title>{% trans "국립중앙박물관 AI 도슨트" %}</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  <!-- 정적 파일 경로 수정 -->
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/explain.css' %}">
 </head>
 <body>
 
-  <!-- 상단 헤더: 왼쪽 로고 + 오른쪽 언어 선택 -->
+  <!-- 상단 헤더 -->
   <div class="header-bar">
     <div class="museum-logo">
-      <!-- 링크는 Django url 태그로 수정 -->
       <a href="{% url 'landing_page' %}" target="_blank">
-        <img src="{% static 'image/logo1.png' %}" alt="국립중앙박물관 로고" height="90">
+        <img src="{% static 'image/logo1.png' %}" alt="{% trans '국립중앙박물관 로고' %}" height="90">
       </a>
     </div>
     <div class="top-bar">
@@ -34,47 +33,38 @@
       <!-- Slide 1 -->
       <div class="layout-row slide">
         <div class="how-section">
-          <h2>{% trans "AI 도슨트 MUSE란?" %}</h2>
-            <p>
-              {% trans "AI 도슨트 MUSE는 관람객과 대화하며 유물을 설명해주는 스마트한 안내 서비스입니다." %}<br>
-              {% trans "질문을 하면, 유물에 대한 정보, 이미지, 그리고 음성 해설까지 제공합니다." %}<br>
-              {% trans "전시를 더 쉽고 흥미롭게 즐길 수 있어요!" %}
-            </p>
+          <h2>{% trans "AI Docent" %} <strong>MUSE</strong> {% trans "란?" %}</h2>
+          <p>
+            <strong>{% trans "MUSE는 유물을 설명하는 AI Docent입니다." %}</strong><br>
+            {% trans "질문을 입력하면 유물에 대한 정보, 이미지, 음성 해설까지 제공해드립니다." %}<br>
+            {% trans "한국어, 영어, 일본어를 지원하여 누구나 쉽고 흥미롭게 전시를 즐길 수 있습니다." %}
+          </p>
         </div>
         <div class="image-preview">
-          <img src="{% static 'image/chatbot.png' %}" alt="챗봇 예시 이미지">
+          <img src="{% static 'image/chatbot.png' %}" alt="{% trans '챗봇 예시 이미지' %}">
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="layout-row slide">
         <div class="how-section">
-          <h2>{% trans "어떻게 이용하나요?" %}</h2>
+          <h2>{% trans "사용 시 주의사항" %}</h2>
           <p>
-            {% trans "1. 페이지 상단에서 원하는 언어(한국어/English/日本語)를 선택하세요." %}<br>
-            {% trans "2. 우측 하단의 '입장하기' 버튼을 클릭하면 도슨트 대화가 시작됩니다." %}<br>
-            {% trans "3. 유물에 대해 궁금한 점을 자유롭게 입력해 보세요." %}<br><br>
-            {% trans "언제든지 이미지와 설명, 음성 해설이 함께 제공됩니다!" %}
+            {% trans "1. 유물에 관련된 질문만 물어봐주세요." %}<br>
+            {% trans "2. 질문은 명확하고 간단하게 입력해주세요 (예시: 이 유물은 언제 만들어졌나요?)" %}<br>
+            {% trans "3. 사진은 일부 유물에 한하여 제공됩니다." %}<br>
+            {% trans "4. 음성 해설은 원할 때 언제든 재생가능합니다." %}
           </p>
         </div>
         <div class="image-preview">
-          <img src="{% static 'image/화면설계서1 (2).png' %}" alt="티켓 입력 예시 이미지">
+          <img src="{% static 'image/chatbot.png' %}" alt="{% trans '티켓 입력 예시 이미지' %}">
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="layout-row slide">
-        <div class="how-section">
-          <h2>{% trans "사용 시 주의사항" %}</h2>
-          <p>
-            {% trans "- 유물에 관련된 질문만 정확하게 답변할 수 있습니다." %}<br>
-            {% trans "- 질문은 명확하고 간단하게 입력해주세요 (예: “이 유물은 언제 만들어졌나요?”)" %}<br>
-            {% trans "- 음성 해설은 일부 유물에 한해 제공될 수 있습니다." %}<br><br>
-            {% trans "※ MUSE는 지속적으로 학습하고 있어, 더 똑똑해지고 있어요!" %}
-          </p>
-        </div>
-        <div class="image-preview">
-          <img src="{% static 'image/화면설계서1 (3).png' %}" alt="챗봇 예시 이미지">
+        <div class="how-section3">
+          <h2>{% trans "지금 바로" %} <strong>MUSE</strong> {% trans "와 함께 전시를 즐겨보세요!" %}</h2>
         </div>
       </div>
     </div>
@@ -102,8 +92,7 @@
 
   <script>
     function gotoDocent() {
-      // 티켓 번호가 유효한 경우에만 이동하도록 추가할 수 있음 (예: 세션에 티켓 번호가 있거나)
-      window.location.href = "{% url 'chatbot_page' %}";  // 챗봇 페이지로 이동
+      window.location.href = "{% url 'chatbot_page' %}";
     }
   </script>
 </body>
