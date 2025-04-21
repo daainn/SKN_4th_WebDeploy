@@ -1,25 +1,27 @@
 from fastapi import FastAPI
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from pydantic import BaseModel
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-import os
-from dotenv import load_dotenv
 
-# .env 파일을 로드하여 환경 변수 설정
-load_dotenv()
-
-# 환경 변수에서 API 키를 불러옵니다
-API_KEY = os.getenv("HUGGINGFACE_API_KEY")
-
-# 모델 로드
-model_name = "Gwangwoon/muse2"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = model.to(device)
-
-# FastAPI 앱 설정
 app = FastAPI()
 
-@app.get("/")
-async def read_root():
-    return {"API_KEY": API_KEY}
+# Qwen2.5-7B 모델 로드
+tokenizer = AutoTokenizer.from_pretrained("Gwangwoon/muse2", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("Gwangwoon/muse2", device_map="auto", torch_dtype=torch.float16, trust_remote_code=True)
+model.eval()
+
+class ChatRequest(BaseModel):
+    question: str
+
+class ChatResponse(BaseModel):
+    answer: str
+
+@app.post("/chat", response_model=ChatResponse)
+def chat(req: ChatRequest):
+    prompt = f"User: {req.question}\nAssistant:"
+    input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(model.device)
+    with torch.no_grad():
+        output = model.generate(input_ids, max_new_tokens=300)
+    response = tokenizer.decode(output[0], skip_special_tokens=True)
+    answer = response.split("Assistant:")[-1].strip()
+    return ChatResponse(answer=answer)
