@@ -54,6 +54,23 @@ function gotoDocent(e) {
   window.location.href = "explain-page.html";
 }
 
+function validateTicket(e) {
+  e.preventDefault();
+  const input = document.getElementById("ticketNum");
+  const ticket = input.value.trim();
+  const errorDiv = document.getElementById("ticketError");
+
+  if (ticket === "#000907") {
+    errorDiv.style.display = "none";
+    e.target.submit();  // 정상 제출
+  } else {
+    errorDiv.style.display = "block";  // 에러 표시
+  }
+
+  return false;  
+}
+
+
 const wrapper = document.querySelector('.horizontal-scroll-wrapper');
     
     // 수직 휠을 좌우 스크롤로 바꾸기
