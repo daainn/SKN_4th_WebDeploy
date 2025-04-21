@@ -1,26 +1,8 @@
 function gotoDocent() {
-  window.location.href = "chatbot-page.html";
+  window.location.href = "/chatbot/";
 }
 
 
-// function setLang(button, lang) {
-//   document.querySelectorAll(".top-bar button").forEach(btn => btn.classList.remove("active"));
-//   button.classList.add("active");
-
-//   document.querySelectorAll(".slide-text").forEach(div => {
-//     div.classList.remove("lang-visible-flex", "lang-visible-block");
-//     div.classList.add("lang-hidden");
-//   });
-
-//   document.querySelectorAll(".lang-" + lang).forEach(div => {
-//     div.classList.remove("lang-hidden");
-//     if (div.classList.contains("how-section3")) {
-//       div.classList.add("lang-visible-flex");
-//     } else {
-//       div.classList.add("lang-visible-block");
-//     }
-//   });
-// }
 function setLang(button, lang) {
   document.querySelectorAll(".top-bar button").forEach(btn => btn.classList.remove("active"));
   button.classList.add("active");
