@@ -28,7 +28,6 @@ function setLang(button, lang) {
     document.getElementById("userQuestion").placeholder = t.questionPlaceholder;
     document.getElementById("chatSubtitle").innerText = t.subtitle;
     document.getElementById("copyright").innerText = translations[lang].copyright;
-
   }
 }
 
@@ -47,30 +46,49 @@ function handleQuestion(event) {
 
   const botDiv = document.createElement('div');
   botDiv.className = 'message bot-response';
-  botDiv.innerHTML = `
-    이 작품은 김수철의 작품으로 간략한 필치와 단순한 형태, 엷지만 선명한 색채가 두드러집니다.<br>
-    산과 바위의 음영 표현 없이 윤곽선만으로 표현되어 김수철 그림의 특징인 간결함이 잘 드러나 있습니다.
-    <br><br>
-    <img src="/static/image/winter-landscape.png" alt="겨울산수" class="response-image">
-    <audio controls class="response-audio">
-      <source src="/static/sample.mp3" type="audio/mpeg">
-      오디오 지원이 불가합니다.
-    </audio>
-  `;
+  botDiv.textContent = '...';  // 로딩 상태 표시
   chatContent.appendChild(botDiv);
 
-  input.value = '';
-  chatContent.scrollTop = chatContent.scrollHeight;
+  // FastAPI 서버에 질의 요청
+  fetch('http://127.0.0.1:8000/generate/', {  // FastAPI URL로 요청
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ text: question }),  // 질문을 JSON으로 보내기
+  })
+  .then(response => response.json())
+  .then(data => {
+    const generatedText = data.generated_text;  // FastAPI 응답
+    const apiKey = data.api_key;  // FastAPI에서 받은 API 키
+    console.log("API Key: ", apiKey);  // API 키 사용 예시
+    botDiv.innerHTML = `
+      ${generatedText}
+      <br><br>
+      <img src="{% static 'image/winter-landscape.png' %}" alt="겨울산수" class="response-image">
+      <audio controls class="response-audio">
+        <source src="{% static 'sample.mp3' %}" type="audio/mpeg">
+        오디오 지원이 불가합니다.
+      </audio>
+    `;
+    chatContent.appendChild(botDiv);
+  })
+  .catch(error => {
+    botDiv.innerText = 'Error: 서버와의 통신이 실패했습니다.';
+  });
+
+  input.value = '';  // 입력창 비우기
+  chatContent.scrollTop = chatContent.scrollHeight;  // 스크롤 하단으로 이동
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const lang = urlParams.get("lang") || localStorage.getItem("selectedLang") || "ko";
 
-  // 다시 localStorage에 저장 (다음 페이지에서도 유지되도록)
+  // 선택된 언어를 localStorage에 저장하여 유지
   localStorage.setItem("selectedLang", lang);
 
-  // 언어 적용 함수 호출
+  // 언어 설정 함수 호출
   const langButton = Array.from(document.querySelectorAll(".top-bar button"))
     .find(btn => btn.textContent.toLowerCase().includes(lang === "ko" ? "한국" : lang === "en" ? "english" : "日本"));
 

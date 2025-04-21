@@ -20,9 +20,9 @@
       </a>
     </div>
     <div class="top-bar language-buttons">
-      <button class="active" onclick="setLang(this, 'ko')">한국어</button>
-      <button onclick="setLang(this, 'en')">English</button>
-      <button onclick="setLang(this, 'ja')">日本語</button>
+      <button class="active" onclick="setLang(this, 'ko')">{% trans "한국어" %}</button>
+      <button onclick="setLang(this, 'en')">{% trans "English" %}</button>
+      <button onclick="setLang(this, 'ja')">{% trans "日本語" %}</button>
     </div>
   </div>
 
@@ -41,7 +41,6 @@
         <input type="text" id="userQuestion" placeholder="{% trans '무엇이 궁금하세요?' %}" required>
       </div>
       <button id="askButton" type="submit" class="submit-btn">⌵</button>
-
     </form>
   </div>
 
