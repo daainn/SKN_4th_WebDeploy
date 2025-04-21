@@ -1,4 +1,4 @@
-{% load static %}  <!-- static 태그를 사용하기 전에 추가 -->
+{% comment %} {% load static %}  <!-- static 태그를 사용하기 전에 추가 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -95,6 +95,127 @@
     ©copyright 본 이미지와 자료는 국립중앙박물관으로부터 제공 받았습니다.
   </p>
   <!-- JS 파일 경로 수정 -->
+  <script src="{% static 'js/landing-script.js' %}"></script>
+</body>
+</html> {% endcomment %}
+
+{% load static %}  <!-- static 태그를 사용하기 전에 추가 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>티켓 입력 | 국립중앙박물관 AI 도슨트</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+  <!-- Django static 태그를 사용하여 경로 설정 -->
+  <link rel="stylesheet" href="{% static 'css/landing-style.css' %}">
+</head>
+<body>
+
+    <div class="top-bar">
+      <div class="logo">
+        <!-- 링크는 Django 템플릿 태그로 수정 -->
+        <a href="{% url 'logo_page' %}" target="_blank">
+          <img src="{% static 'image/logo1.png' %}" alt="국립중앙박물관 로고" height="90">
+        </a>
+      </div>
+      <div class="language-buttons">
+        <button class="active" onclick="setLang(this, 'ko')">한국어</button>
+        <button onclick="setLang(this, 'en')">English</button>
+        <button onclick="setLang(this, 'ja')">日本語</button>
+      </div>
+    </div>
+    
+    <div class="title">
+      <h1 data-i18n="title">유물에 말을 걸다, <strong>MUSE</strong>가 답하다.</h1>
+      <p data-i18n="subtitle">티켓번호를 입력하여 국립중앙박물관의 작품 해설이 담긴 챗봇을 이용해 보세요</p>
+    </div>
+
+    <div class="ticket-input">
+      <form class="ticket-form" action="{% url 'explain_page' %}" method="POST" onsubmit="return validateTicket(event)">
+        {% csrf_token %}
+        <div class="ticket-row">
+          <input
+            type="text"
+            id="ticketNum"
+            name="ticketNum"
+            placeholder="챗봇 사용을 위해 국립중앙박물관 티켓 번호를 입력해주세요. (예: #12345678)"
+            required
+          />
+          <button class="submit-btn" type="submit"><span>⌵</span></button>
+        </div>
+        <div class="ticket-error" id="ticketError" data-i18n="ticketError">
+          유효하지 않은 티켓 번호입니다. 번호를 다시 확인해주세요.
+        </div>
+      </form>
+    </div>
+
+    <div class="container">
+      <!-- 🎌 한글 버전 -->
+      <div class="row row-1">
+        <!-- 세트 1 -->
+        <div class="box">김수철 화백에 대해서 알려줘.</div>
+        <div class="box">겨울 산수에 대해서 설명해줘.</div>
+        <div class="box">반가사유상이 뭐야?</div>
+        <div class="box">신라시대 유물은 어떤 게 있어?</div>
+        <div class="box">흑갈유 병에 대해서 설명해줘.</div>
+        <div class="box">이순신과 관련된 작품이 있어?</div>
+        <div class="box">목제 인형에 대해서 알려줘.</div>
+        <div class="box">투구에 대한 설명이 필요해.</div>
+      </div>
+    
+      <!-- 🇺🇸 영어 버전 -->
+      <div class="row row-2">
+        <div class="box">Tell me about artist Kim Soo-chul.</div>
+        <div class="box">Please explain about Winter Landscape.</div>
+        <div class="box">What's a half-sitting statue?</div>
+        <div class="box">What kind of artifacts are from the Silla Dynasty?</div>
+        <div class="box">Please explain the black-brown glazed bottle.</div>
+        <div class="box">Is there any artwork related to Admiral Yi Sun-sin?</div>
+        <div class="box">Tell me about the wooden doll.</div>
+        <div class="box">I need an explanation for the helmet.</div>
+      </div>
+    
+      <!-- 🇯🇵 일본어 버전 -->
+      <div class="row row-3">
+        <div class="box">キム・スチョル画伯について教えてくれ。</div>
+        <div class="box">冬の山水について説明してくれ。</div>
+        <div class="box">半跏思惟像って何？</div>
+        <div class="box">新羅時代の遺物にはどんなものがある？</div>
+        <div class="box">黒褐釉瓶について説明して。</div>
+        <div class="box">李舜臣に関連する作品はある？</div>
+        <div class="box">木製の人形について教えて。</div>
+        <div class="box">兜について説明が必要だ。</div>
+      </div>
+    </div>
+
+  <p class="copyright" id="copyright" data-i18n="copyright">
+    ©copyright 본 이미지와 자료는 국립중앙박물관으로부터 제공 받았습니다.
+  </p>
+
+  <!-- 👇 validateTicket 함수 직접 삽입 -->
+  <script>
+    function validateTicket(e) {
+      e.preventDefault();
+      const input = document.getElementById("ticketNum");
+      const ticket = input.value.trim();
+      const errorDiv = document.getElementById("ticketError");
+
+      if (ticket === "#000907") {
+        errorDiv.style.display = "none";
+        e.target.submit();
+      } else {
+        errorDiv.style.display = "block";
+      }
+
+      return false;
+    }
+  </script>
+
+  <!-- 기존 JS 연결 (다른 함수용이라면 유지) -->
   <script src="{% static 'js/landing-script.js' %}"></script>
 </body>
 </html>
