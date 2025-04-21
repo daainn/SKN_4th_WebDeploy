@@ -3,6 +3,24 @@ function gotoDocent() {
 }
 
 
+// function setLang(button, lang) {
+//   document.querySelectorAll(".top-bar button").forEach(btn => btn.classList.remove("active"));
+//   button.classList.add("active");
+
+//   document.querySelectorAll(".slide-text").forEach(div => {
+//     div.classList.remove("lang-visible-flex", "lang-visible-block");
+//     div.classList.add("lang-hidden");
+//   });
+
+//   document.querySelectorAll(".lang-" + lang).forEach(div => {
+//     div.classList.remove("lang-hidden");
+//     if (div.classList.contains("how-section3")) {
+//       div.classList.add("lang-visible-flex");
+//     } else {
+//       div.classList.add("lang-visible-block");
+//     }
+//   });
+// }
 function setLang(button, lang) {
   document.querySelectorAll(".top-bar button").forEach(btn => btn.classList.remove("active"));
   button.classList.add("active");
@@ -20,8 +38,14 @@ function setLang(button, lang) {
       div.classList.add("lang-visible-block");
     }
   });
-}
 
+  const enterBtn = document.querySelector(".enter-btn");
+  if (enterBtn) {
+    if (lang === "ko") enterBtn.textContent = "입장하기";
+    else if (lang === "en") enterBtn.textContent = "Enter";
+    else if (lang === "ja") enterBtn.textContent = "入場する";
+  }
+}
 
 // 슬라이드 휠 스크롤 적용
 const wrapper = document.querySelector('.horizontal-scroll-wrapper');
