@@ -57,7 +57,7 @@ function updateIndicator() {
   dots.forEach(dot => dot.classList.remove('active'));
   dots[index]?.classList.add('active');
 
-  // 👉 마지막 슬라이드 도달 시만 버튼 표시
+  // 마지막 슬라이드 도달 시만 버튼 표시
   if (index === dots.length - 1) {
       enterBtnWrapper.style.display = 'block';
   } else {
