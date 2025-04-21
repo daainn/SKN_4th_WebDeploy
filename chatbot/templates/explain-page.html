@@ -139,5 +139,11 @@
   <!-- JS 연결 -->
   <script src="{% static 'js/explain.js' %}"></script>
 
+  <script>
+    function gotoDocent() {
+      window.location.href = "{% url 'chatbot_page' %}";
+    }
+  </script>
+  <script src="{% static 'js/lang-handler.js' %}"></script>
 </body>
 </html>

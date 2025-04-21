@@ -62,3 +62,19 @@ function handleQuestion(event) {
   input.value = '';
   chatContent.scrollTop = chatContent.scrollHeight;
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const lang = urlParams.get("lang") || localStorage.getItem("selectedLang") || "ko";
+
+  // 다시 localStorage에 저장 (다음 페이지에서도 유지되도록)
+  localStorage.setItem("selectedLang", lang);
+
+  // 언어 적용 함수 호출
+  const langButton = Array.from(document.querySelectorAll(".top-bar button"))
+    .find(btn => btn.textContent.toLowerCase().includes(lang === "ko" ? "한국" : lang === "en" ? "english" : "日本"));
+
+  if (langButton) {
+    setLang(langButton, lang);
+  }
+});
