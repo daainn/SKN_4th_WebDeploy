@@ -132,7 +132,7 @@ body {
 
 .how-section h2 strong {
   font-family: 'Saira Stencil One', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 
 
@@ -174,7 +174,6 @@ body {
   box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.08); 
 }
 
-
 .how-section3 {
   display: flex;
   justify-content: center;
@@ -201,6 +200,7 @@ body {
   margin-bottom: 1.75rem;
 }
 
+
 .dot {
   display: inline-block;
   width: 10px;
@@ -216,11 +216,11 @@ body {
 }
 
 .enter-btn-wrapper {
-  position: fixed; /* 화면에 고정 */
+  position: fixed; 
   right: 2rem;
   bottom: 2rem;
   z-index: 100;
-  display: none; /* 기본은 안 보이게 */
+  display: none;
 }
 
 .enter-btn {
@@ -244,4 +244,14 @@ body {
   font-size: 0.75rem;
   color: #888;
   margin-top: 1rem;
+}
+
+.lang-hidden {
+  display: none !important;
+}
+.lang-visible-flex {
+  display: flex !important;
+}
+.lang-visible-block {
+  display: block !important;
 }

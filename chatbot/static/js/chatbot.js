@@ -3,19 +3,19 @@ const translations = {
     title: "MUSE",
     subtitle: "국립중앙박물관 챗봇",
     questionPlaceholder: "무엇이 궁금하세요?",
-    askButton: "⌵"
+    copyright: "©copyright 본 이미지와 자료는 국립중앙박물관으로부터 제공 받았습니다."
   },
   en: {
     title: "MUSE",
     subtitle: "National Museum Chatbot",
     questionPlaceholder: "Ask your question",
-    askButton: "⌵"
+    copyright: "©copyright These images and materials were provided by the National Museum of Korea."
   },
   ja: {
     title: "MUSE",
     subtitle: "国立中央博物館 チャットボット",
     questionPlaceholder: "質問を入力してください",
-    askButton: "⌵"
+    copyright: "©copyright これらの画像と資料は国立中央博物館より提供されたものです。"
   }
 };
 
@@ -26,7 +26,9 @@ function setLang(button, lang) {
   const t = translations[lang];
   if (t) {
     document.getElementById("userQuestion").placeholder = t.questionPlaceholder;
-    document.getElementById("askButton").textContent = t.askButton;
+    document.getElementById("chatSubtitle").innerText = t.subtitle;
+    document.getElementById("copyright").innerText = translations[lang].copyright;
+
   }
 }
 
