@@ -1,9 +1,12 @@
 function gotoDocent() {
-  window.location.href = "/chatbot/";
+  const lang = localStorage.getItem("selectedLang") || "ko";
+  window.location.href = `chatbot-page.html?lang=${lang}`;
 }
 
 
 function setLang(button, lang) {
+  localStorage.setItem("selectedLang", lang);
+
   document.querySelectorAll(".top-bar button").forEach(btn => btn.classList.remove("active"));
   button.classList.add("active");
 
@@ -80,4 +83,17 @@ document.querySelector('.horizontal-scroll-wrapper')?.addEventListener('scroll',
       behavior: 'smooth'
     });
   });
+});
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem("selectedLang") || "ko";
+
+  // 버튼을 찾아서 setLang에 전달 (버튼 없을 수도 있으니 확인)
+  const langButton = Array.from(document.querySelectorAll(".top-bar button"))
+    .find(btn => btn.textContent.toLowerCase().includes(savedLang === "ko" ? "한국" : savedLang === "en" ? "english" : "日本"));
+
+  if (langButton) {
+    setLang(langButton, savedLang);
+  }
 });

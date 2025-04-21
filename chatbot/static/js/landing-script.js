@@ -1,5 +1,8 @@
 
 function setLang(button, lang) {
+
+  localStorage.setItem("selectedLang", lang);
+
   document.querySelectorAll(".top-bar button").forEach(btn => btn.classList.remove("active"));
   button.classList.add("active");
   
@@ -51,7 +54,9 @@ function gotoDocent(e) {
     return;
   }
 
-  window.location.href = "explain-page.html";
+  const lang = localStorage.getItem("selectedLang") || "ko";
+  const encodedTicket = encodeURIComponent(ticket);
+  window.location.href = `explain-page.html?lang=${lang}&ticket=${encodedTicket}`;
 }
 
 function validateTicket(e) {
