@@ -32,13 +32,25 @@
     <div class="chat-watermark-sub" id="chatSubtitle">{% trans "국립중앙박물관 챗봇" %}</div>
 
     <div id="chatBox" class="chat-box">
-      <div class="chat-content" id="chatContent"></div>
+      <div class="chat-content" id="chatContent">
+        {% if question %}
+          <div class="message user-message">{{ question }}</div>
+          <div class="message bot-response">{{ answer }}</div>
+        {% endif %}
+      </div>
     </div>
 
     <!-- 입력창 -->
-    <form class="input-area" onsubmit="handleQuestion(event)">
+    {% comment %} <form class="input-area" onsubmit="handleQuestion(event)">
       <div class="input-group">
         <input type="text" id="userQuestion" placeholder="{% trans '무엇이 궁금하세요?' %}" required>
+      </div>
+      <button id="askButton" type="submit" class="submit-btn">⌵</button>
+    </form> {% endcomment %}
+    <form class="input-area" method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        <input type="text" name="question" id="userQuestion" value="{{ question }}" placeholder="무엇이 궁금하세요?" required>
       </div>
       <button id="askButton" type="submit" class="submit-btn">⌵</button>
     </form>
