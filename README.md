@@ -1,6 +1,6 @@
 # **SKN09-4th-5Team**
 
-> SK네트웍스 Family AI 캠프 9기 3차 프로젝트
+> SK네트웍스 Family AI 캠프 9기 3차 프로젝트 <br>
 > 개발기간: 25.04.19 - 25.04.22
 
 <br>
@@ -117,9 +117,10 @@
 # 4. 시스템 아키텍처
 
 <div align="center">
-  <img src="./images/architecture2.png">
+  <img src="./images/시스템아키텍쳐.png">
 </div>
 
+<br><br>
 
 ---
 
