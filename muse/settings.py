@@ -14,7 +14,13 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [0.0.0.0]
+ALLOWED_HOSTS = [
+    '194.68.245.149',   # RunPod 퍼블릭 IP
+    'localhost',        # 내부 로컬 호출
+    '127.0.0.1',        # 루프백 IP
+    '0.0.0.0',          # 모든 주소에서 접근 허용
+    'muse.com',         # 도메인 연결 시 (선택 사항)
+]
 
 
 # Application definition
