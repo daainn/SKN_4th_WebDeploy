@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <!-- Django static 태그를 사용하여 경로 설정 -->
+
   <link rel="stylesheet" href="{% static 'css/landing-style.css' %}">
 </head>
 <body>
 
     <div class="top-bar">
       <div class="logo">
-        <!-- 링크는 Django 템플릿 태그로 수정 -->
+
         <a href="{% url 'logo_page' %}" target="_blank">
           <img src="{% static 'image/logo1.png' %}" alt="국립중앙박물관 로고" height="90">
         </a>
@@ -53,9 +53,7 @@
     </div>
 
     <div class="container">
-      <!-- 🎌 한글 버전 -->
       <div class="row row-1">
-        <!-- 세트 1 -->
         <div class="box">김수철 화백에 대해서 알려줘.</div>
         <div class="box">겨울 산수에 대해서 설명해줘.</div>
         <div class="box">반가사유상이 뭐야?</div>
@@ -65,8 +63,7 @@
         <div class="box">목제 인형에 대해서 알려줘.</div>
         <div class="box">투구에 대한 설명이 필요해.</div>
       </div>
-    
-      <!-- 🇺🇸 영어 버전 -->
+  
       <div class="row row-2">
         <div class="box">Tell me about artist Kim Soo-chul.</div>
         <div class="box">Please explain about Winter Landscape.</div>
@@ -77,8 +74,7 @@
         <div class="box">Tell me about the wooden doll.</div>
         <div class="box">I need an explanation for the helmet.</div>
       </div>
-    
-      <!-- 🇯🇵 일본어 버전 -->
+      
       <div class="row row-3">
         <div class="box">キム・スチョル画伯について教えてくれ。</div>
         <div class="box">冬の山水について説明してくれ。</div>
@@ -95,7 +91,6 @@
     ©copyright 본 이미지와 자료는 국립중앙박물관으로부터 제공 받았습니다.
   </p>
 
-  <!-- 👇 validateTicket 함수 직접 삽입 -->
   <script>
     function validateTicket(e) {
       e.preventDefault();
@@ -114,7 +109,6 @@
     }
   </script>
 
-  <!-- 기존 JS 연결 (다른 함수용이라면 유지) -->
   <script src="{% static 'js/landing-script.js' %}"></script>
   <script src="{% static 'js/lang-handler.js' %}"></script>
 </body>
