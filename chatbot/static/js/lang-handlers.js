@@ -6,18 +6,15 @@ function applyLanguage(lang) {
     };
     const current = langMap[lang] || langMap["ko"];
   
-    // 언어별 영역 전체 숨기기
     document.querySelectorAll(".lang-ko, .lang-en, .lang-ja, .row-1, .row-2, .row-3").forEach(el => {
       el.style.display = "none";
     });
   
-    // 해당 언어만 보이기
     document.querySelectorAll(current.selector).forEach(el => {
       const isFlex = el.closest('.layout-row') || el.classList.contains('row-1') || el.classList.contains('row-2') || el.classList.contains('row-3');
       el.style.display = isFlex ? "flex" : "block";
     });
   
-    // 버튼 UI 상태
     document.querySelectorAll(".top-bar button, .language-buttons button").forEach(btn => {
       btn.classList.remove("active");
     });
@@ -26,7 +23,6 @@ function applyLanguage(lang) {
       buttons[current.index].classList.add("active");
     }
   
-    // chatbot-page일 경우 추가 텍스트 교체
     if (document.getElementById("chatSubtitle")) {
       const subtitleText = {
         ko: "국립중앙박물관 챗봇",
