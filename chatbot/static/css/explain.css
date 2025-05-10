@@ -76,7 +76,6 @@ body {
   gap: 8rem; 
   padding: 2rem 2rem; 
   box-sizing: border-box; 
-  /* width: 100%; /* 사용자 코드 유지 - 주석 처리 */
 }
 
 .horizontal-scroll-wrapper::-webkit-scrollbar {
@@ -89,10 +88,9 @@ body {
 
 
 .layout-row {
-  /* flex: 0 0 90%; /* flex-basis를 고정 너비로 대체 - 사용자 코드 유지 (주석 처리) */
-  width: 900px; /* 박스 너비를 900px로 고정 - 사용자 코드 유지 */
-  min-width: 900px; /* 최소 너비 유지 (width와 동일 값) - 사용자 코드 유지 */
-  height: 450px; /* 슬라이드 높이 고정 (언어 변경 시 높이 고정) - 이 부분을 추가/수정 */
+  width: 900px;
+  min-width: 900px;
+  height: 450px;
   scroll-snap-align: center; 
   display: flex; 
   align-items: flex-start; 
@@ -116,8 +114,8 @@ body {
 .how-section {
   flex: 1 1 60%; 
   padding-right: 1rem; 
-  overflow-y: auto; /* 내용 넘칠 경우 내부 스크롤 */
-  height: 100%; /* 부모(.layout-row)의 높이를 채우도록 설정 (내부 스크롤 위해) */
+  overflow-y: auto; 
+  height: 100%; 
   margin-top: 5.5rem;
   margin-left: 3rem;
 }
@@ -137,18 +135,18 @@ body {
 
 
 .how-section p {
-  white-space: normal;       /* ✅ 자동 줄바꿈 되게 함 */
+  white-space: normal; 
   color: #444;
   line-height: 1.8;
   font-size: 1rem;
   font-family: 'Noto Sans KR', sans-serif;
   letter-spacing: 0.02em;
-  margin-bottom: 1rem;       /* 문단 간격 주기 */
+  margin-bottom: 1rem; 
   margin-right: 6rem;
 }
 
 .how-section p strong {
-  display: block;            /* ✅ 강조 문장을 별도 줄로 */
+  display: block;  
   font-weight: bold;
   margin-bottom: 0.5rem;
   font-size: 1rem;
@@ -158,18 +156,18 @@ body {
 .image-preview {
   flex: 1 1 40%; 
   text-align: center; 
-  display: flex; /* 내부 이미지 중앙 정렬을 위해 flex 사용 */
-  align-items: center; /* 세로 중앙 정렬 */
-  justify-content: center; /* 가로 중앙 정렬 */
-  overflow: hidden; /* 이미지 넘치는 부분 숨김 */
-  height: 100%; /* 부모(.layout-row)의 높이를 채우도록 설정 */
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden;
+  height: 100%; 
   margin-right: 3rem;
 }
 
 .image-preview img {
   max-width: 100%; 
-  max-height: 100%; /* 이미지 높이도 부모 높이에 맞추도록 설정 */
-  object-fit: contain; /* 이미지 비율 유지하며 영역에 맞춤 */
+  max-height: 100%; 
+  object-fit: contain; 
   border-radius: 1rem; 
   box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.08); 
 }
@@ -178,7 +176,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;   /* ✅ 핵심 */
+  height: 100%;
   width: 100%;
 }
 
@@ -193,7 +191,6 @@ body {
   font-size: 1.9rem;
 }
 
-/* 슬라이드 인디케이터 및 입장 버튼 스타일 - 사용자 코드 유지 */
 .slide-indicator {
   text-align: center;
   margin-top: 1rem;
