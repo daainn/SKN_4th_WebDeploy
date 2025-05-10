@@ -3,7 +3,6 @@ function gotoDocent() {
   window.location.href = `chatbot-page.html?lang=${lang}`;
 }
 
-
 function setLang(button, lang) {
   localStorage.setItem("selectedLang", lang);
 
