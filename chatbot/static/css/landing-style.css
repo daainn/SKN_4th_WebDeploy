@@ -31,8 +31,8 @@ body {
 
  .top-bar {
   display: flex;
-  justify-content: space-between;  /* ← 로고 왼쪽, 버튼 오른쪽 */
-  align-items: center;              /* ← 수직 가운데 정렬 */
+  justify-content: space-between;  
+  align-items: center;   
   padding: 1.5rem 2rem 0;
 }
 
@@ -53,9 +53,9 @@ body {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease-in-out;
   
-  min-width: 90px;        /* 👈 최소 너비 동일하게 맞춤 */
-  text-align: center;     /* 👈 텍스트 가운데 정렬 */
-  flex-shrink: 0;         /* 👈 줄어들지 않게 설정 */
+  min-width: 90px;   
+  text-align: center;   
+  flex-shrink: 0;  
 }
 
 
@@ -81,16 +81,16 @@ body {
 }
 
 .title h1 {
-  font-family: 'Noto Sans KR', sans-serif;  /* 기본 얇은 글씨 */
-  font-weight: 600;                         /* 얇게 */
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 600;     
   font-size: 3rem;
   color: #535050;
 }
 
 .title h1 strong {
-  font-family: 'Saira Stencil One', sans-serif;  /* MUSE 전용 폰트 */
+  font-family: 'Saira Stencil One', sans-serif;  
   font-weight: 800;  
-  color: #535050;                            /* 진하게 */
+  color: #535050;                       
 }
 
 .title p {
@@ -153,12 +153,12 @@ body {
 }
 
 .submit-btn span {
-transform: translateY(-2.5px); /* ← 살짝 위로 올림 */
+transform: translateY(-2.5px); 
 display: inline-block;
 }
 
 .submit-btn:hover {
-  background-color: #222; /* 살짝 밝은 블랙 */
+  background-color: #222;
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
@@ -168,7 +168,7 @@ display: inline-block;
   font-size: 0.9rem;
   margin-top: 0.5rem;
   margin-left: 1rem;
-  display: none;  /* 기본 감춤 */
+  display: none; 
   text-align: left;
 }
 
@@ -283,7 +283,7 @@ display: inline-block;
 
 
 .row:hover {
-  animation-play-state: paused; /* 마우스 호버 시 애니메이션 일시정지 */
+  animation-play-state: paused; 
 }
 
 
@@ -293,7 +293,6 @@ display: inline-block;
   color: #333;
   text-align: center;
   padding: 10px;
-  /* margin-right: 1px; */
   gap: 6px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -323,11 +322,11 @@ display: inline-block;
 }
 
 .row-1 {
-  animation: moveRightContinuous 30s linear infinite; /* 속도 고정 */
+  animation: moveRightContinuous 30s linear infinite; 
 }
 
 .row-2 {
-  animation: moveLeftContinuous 30s linear infinite; /* 속도 고정 */
+  animation: moveLeftContinuous 30s linear infinite; 
 }
 
 .row-3 {
