@@ -5,7 +5,6 @@ import torch
 
 app = FastAPI()
 
-# Qwen2.5-7B 모델 로드
 tokenizer = AutoTokenizer.from_pretrained("Gwangwoon/muse2", trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained("Gwangwoon/muse2", device_map="auto", torch_dtype=torch.float16, trust_remote_code=True)
 model.eval()
@@ -17,6 +16,7 @@ class ChatResponse(BaseModel):
     answer: str
 
 @app.post("/chat", response_model=ChatResponse)
+
 def chat(req: ChatRequest):
     prompt = f"User: {req.question}\nAssistant:"
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(model.device)
